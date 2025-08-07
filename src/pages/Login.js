@@ -27,9 +27,12 @@ const Login = () => {
         return;
       }
 
-      // ✅ Save user in AuthContext and localStorage
-      console.log("Login Response:", data);
+      // ✅ Save token separately in localStorage
+      if (data.token) {
+        localStorage.setItem("token", data.token); // <-- Add this line
+      }
 
+      // ✅ Save full user info
       setUser(data);
       localStorage.setItem("user", JSON.stringify(data));
 
