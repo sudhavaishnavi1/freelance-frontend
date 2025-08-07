@@ -12,7 +12,7 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const res = await fetch("/api/auth/login", {
+      const res = await fetch("https://freelance-backend-3.onrender.com/api/auth/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const FreelancerDashboard = () => {
       if (!user?.id) return;
 
       try {
-        const res = await axios.get(`/api/gigs/user/${user.id}`, {
+        const res = await axios.get(`https://freelance-backend-3.onrender.com/api/gigs/user/${user.id}`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },
@@ -31,7 +31,7 @@ const FreelancerDashboard = () => {
 
     const fetchOrders = async () => {
       try {
-        const res = await axios.get(`/api/orders/freelancer-orders`, {
+        const res = await axios.get(`https://freelance-backend-3.onrender.com/api/orders/freelancer-orders`, {
           headers: {
             Authorization: `Bearer ${user.token}`,
           },

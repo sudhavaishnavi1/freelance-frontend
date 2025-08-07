@@ -34,7 +34,7 @@ const Register = () => {
     }
 
     try {
-      await axios.post("/api/auth/register", formData);
+      await axios.post("https://freelance-backend-3.onrender.com/api/auth/register", formData);
       // toast.success("Registration successful");
       navigate("/login");
     } catch (err) {

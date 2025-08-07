@@ -12,8 +12,8 @@ const GigDetail = () => {
     const fetchGigAndReviews = async () => {
       try {
         const [gigRes, reviewRes] = await Promise.all([
-          axios.get(`http://localhost:5000/api/gigs/${id}`),
-          axios.get(`http://localhost:5000/api/reviews/${id}`),
+          axios.get(`https://freelance-backend-3.onrender.com/api/gigs/${id}`),
+          axios.get(`https://freelance-backend-3.onrender.com/api/reviews/${id}`),
         ]);
         setGig(gigRes.data);
         setReviews(reviewRes.data);

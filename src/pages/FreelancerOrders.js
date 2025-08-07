@@ -30,7 +30,7 @@ const FreelancerOrders = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        `http://localhost:5000/api/orders/mark-delivered/${orderId}`,
+        `https://freelance-backend-3.onrender.com/api/orders/mark-delivered/${orderId}`,
         formData,
         {
           headers: {
@@ -41,7 +41,7 @@ const FreelancerOrders = () => {
       );
 
       // Refresh orders
-      const updatedOrders = await axios.get("http://localhost:5000/api/orders/freelancer-orders", {
+      const updatedOrders = await axios.get("https://freelance-backend-3.onrender.com/api/orders/freelancer-orders", {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -72,7 +72,7 @@ const FreelancerOrders = () => {
                 {/* ✅ Download link for delivered file */}
                 {order.deliveryFile && (
                   <a
-                    href={`http://localhost:5000/api/orders/delivery/${order._id}`}
+                    href={`https://freelance-backend-3.onrender.com/api/orders/delivery/${order._id}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-blue-500 underline"

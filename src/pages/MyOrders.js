@@ -39,7 +39,7 @@ const MyOrders = () => {
               {/* ✅ Show download link if delivery is available */}
               {order.status === "delivered" && order.deliveryFile && (
                 <a
-                  href={`http://localhost:5000/uploads/${order.deliveryFile}`}
+                  href={`https://freelance-backend-3.onrender.com/uploads/${order.deliveryFile}`}
                   download
                   className="inline-block mt-2 px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
                 >

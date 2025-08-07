@@ -7,7 +7,7 @@ const Orders = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await axios.get("/api/orders/my-orders", {
+        const res = await axios.get("https://freelance-backend-3.onrender.com/api/orders/my-orders", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },

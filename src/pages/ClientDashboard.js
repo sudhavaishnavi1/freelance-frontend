@@ -11,7 +11,7 @@ const ClientDashboard = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const res = await fetch("/api/orders/client", {
+        const res = await fetch("https://freelance-backend-3.onrender.com/api/orders/client", {
           headers: {
             Authorization: `Bearer ${user?.token}`,
           },

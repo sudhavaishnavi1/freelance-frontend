@@ -11,10 +11,10 @@ const AdminPanel = () => {
       try {
         const token = localStorage.getItem("token");
         const [usersRes, gigsRes] = await Promise.all([
-          axios.get("/api/admin/users", {
+          axios.get("https://freelance-backend-3.onrender.com/api/admin/users", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          axios.get("/api/admin/gigs", {
+          axios.get("https://freelance-backend-3.onrender.com/api/admin/gigs", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);
