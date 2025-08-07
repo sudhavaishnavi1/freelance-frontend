@@ -8,13 +8,14 @@ const GigCard = ({ gig }) => {
   const { user } = useContext(AuthContext);
 
   const handleBuyNow = async () => {
-    localStorage.setItem("purchasedGigId", gig._id);
     if (!user) {
       alert("Please log in to place an order.");
       return navigate("/login");
     }
 
-  const token = user.token;
+  localStorage.setItem("purchasedGigId", gig._id);
+  localStorage.setItem("token", user.token);
+
 
     try {
       const res = await fetch("https://freelance-backend-3.onrender.com/api/orders/create-checkout-session", {
