@@ -16,7 +16,7 @@ const GigCard = ({ gig }) => {
     }
 
     try {
-      const res = await fetch("/api/orders/create-checkout-session", {
+      await api.post("https://freelance-backend-3.onrender.com/api/auth/login", userData), {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -29,7 +29,7 @@ const GigCard = ({ gig }) => {
           price: gig.price,
           title: gig.title,
         }),
-      });
+      };
 
       const data = await res.json();
 

@@ -30,7 +30,7 @@ const CreateGig = () => {
       const token = localStorage.getItem("token");
 
       await axios.post(
-        '${process.env.REACT_APP_API_URL}/api/gigs',
+        '${https://freelance-backend-3.onrender.com/api/gigs',
         formData, {
         headers: {
           "Content-Type": "multipart/form-data",
