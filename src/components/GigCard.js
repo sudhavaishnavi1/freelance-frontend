@@ -13,16 +13,23 @@ const GigCard = ({ gig }) => {
       return navigate("/login");
     }
 
-  localStorage.setItem("purchasedGigId", gig._id);
-  localStorage.setItem("token", user.token);
-
+    // Store gig ID and token locally (optional use)
+    localStorage.setItem("purchasedGigId", gig._id);
+    localStorage.setItem("token", user.token);
 
     try {
+      const token = user.token || localStorage.getItem("token");
+
+      if (!token) {
+        alert("Authorization token missing. Please log in again.");
+        return navigate("/login");
+      }
+
       const res = await fetch("https://freelance-backend-3.onrender.com/api/orders/create-checkout-session", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${user.token}`,
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify({
           gigId: gig._id,
@@ -40,7 +47,7 @@ const GigCard = ({ gig }) => {
         return;
       }
 
-      // Redirect to Stripe checkout
+      // ✅ Redirect to Stripe checkout
       window.location.href = data.url;
     } catch (err) {
       console.error("Stripe checkout error:", err);
