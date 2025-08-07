@@ -8,7 +8,7 @@ const GigList = () => {
   useEffect(() => {
     const fetchGigs = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/gigs");
+        const res = await axios.get("https://freelance-backend-3.onrender.com/api/gigs");
         setGigs(res.data);
       } catch (err) {
         console.error("Failed to fetch gigs", err);
